@@ -74,7 +74,7 @@ def list_my_data():
 def compute_bonus():
     # check that user provided the correct keys
     # errors will not be that gracefull here if being
-    # accessed by the Javascrip client
+    # accessed by the Javascript client
     if not 'uniqueId' in request.args:
         # i don't like returning HTML to JSON requests...  maybe should change this
         raise ExperimentError('improper_inputs')
