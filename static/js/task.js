@@ -14,7 +14,7 @@ var mycounterbalance = counterbalance;  // they tell you which condition you hav
 // All pages to be loaded
 var pages = [
 	"instructions/instruct-1.html",
-	// "instructions/instruct-2.html",
+	"instructions/instruct-2.html",
 	"instructions/instruct-3.html",
 	"instructions/instruct-ready.html",
 	"stage.html",
@@ -52,14 +52,14 @@ var StroopExperiment = function() {
 	// Stimuli for a basic Stroop experiment
 	var stims = [
 			["SHIP", "red", "unrelated"],
-			["MONKEY", "green", "unrelated"],
-			["ZAMBONI", "blue", "unrelated"],
-			["RED", "red", "congruent"],
-			["GREEN", "green", "congruent"],
-			["BLUE", "blue", "congruent"],
-			["GREEN", "red", "incongruent"],
-			["BLUE", "green", "incongruent"],
-			["RED", "blue", "incongruent"]
+			// ["MONKEY", "green", "unrelated"],
+			// ["ZAMBONI", "blue", "unrelated"],
+			// ["RED", "red", "congruent"],
+			// ["GREEN", "green", "congruent"],
+			// ["BLUE", "blue", "congruent"],
+			// ["GREEN", "red", "incongruent"],
+			// ["BLUE", "green", "incongruent"],
+			// ["RED", "blue", "incongruent"]
 		];
 
 	stims = _.shuffle(stims);
@@ -73,7 +73,7 @@ var StroopExperiment = function() {
 			show_word( stim[0], stim[1] );
 			wordon = new Date().getTime();
 			listening = true;
-			d3.select("#query").html('<p id="prompt">Type "R" for Red, "B" for blue, "G" for green.</p>');
+			d3.select("#query").html('<p id="prompt">Type "1" for first video, "2" for second video, "3" for third video.</p>');
 		}
 	};
 	
@@ -83,17 +83,18 @@ var StroopExperiment = function() {
 		var keyCode = e.keyCode,
 			response;
 
+		//use https://keycode.info/ for finding keycodes
 		switch (keyCode) {
-			case 82:
-				// "R"
-				response="red";
+			case 49:
+				// "1"
+				response="red"; //FIX THIS: MAKE IT SO THAT 1,2,3 are valid responses
 				break;
-			case 71:
-				// "G"
+			case 50:
+				// "2"
 				response="green";
 				break;
-			case 66:
-				// "B"
+			case 51:
+				// "3"
 				response="blue";
 				break;
 			default:
