@@ -14,7 +14,7 @@ var mycounterbalance = counterbalance;  // they tell you which condition you hav
 // All pages to be loaded
 var pages = [
 	"instructions/instruct-1.html",
-	"instructions/instruct-2.html",
+	// "instructions/instruct-2.html",
 	"instructions/instruct-3.html",
 	"instructions/instruct-ready.html",
 	"stage.html",
