@@ -44,7 +44,7 @@ var instructionPages = [ // add as a list as many pages as you like
 /********************
 * STROOP TEST       *
 ********************/
-var StroopExperiment = function() {
+var aug_taxi_exp = function() {
 
 	var wordon, // time word is presented
 	    listening = false;
@@ -52,7 +52,7 @@ var StroopExperiment = function() {
 	// Stimuli for a basic Stroop experiment
 	var stims = [
 			["SHIP", "red", "unrelated"],
-			// ["MONKEY", "green", "unrelated"],
+			["MONKEY", "green", "unrelated"],
 			// ["ZAMBONI", "blue", "unrelated"],
 			// ["RED", "red", "congruent"],
 			// ["GREEN", "green", "congruent"],
@@ -87,15 +87,31 @@ var StroopExperiment = function() {
 		switch (keyCode) {
 			case 49:
 				// "1"
-				response="red"; //FIX THIS: MAKE IT SO THAT 1,2,3 are valid responses
+				response="1"; //FIX THIS: MAKE IT SO THAT 1,2,3 are valid responses
 				break;
 			case 50:
 				// "2"
-				response="green";
+				response="2";
 				break;
 			case 51:
 				// "3"
-				response="blue";
+				response="3";
+				break;
+			case 38:
+				// "3"
+				response="up";
+				break;
+			case 37:
+				// "3"
+				response="left";
+				break;
+			case 39:
+				// "3"
+				response="right";
+				break;
+			case 40:
+				// "3"
+				response="down";
 				break;
 			default:
 				response = "";
@@ -223,6 +239,6 @@ var currentview;
 $(window).load( function(){
     psiTurk.doInstructions(
     	instructionPages, // a list of pages you want to display in sequence
-    	function() { currentview = new StroopExperiment(); } // what you want to do when you are done with instructions
+    	function() { currentview = new aug_taxi_exp(); } // what you want to do when you are done with instructions
     );
 });
